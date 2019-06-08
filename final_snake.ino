@@ -184,7 +184,7 @@ void Display_Word(unsigned char dat[][32])
 
     for( i = 0 ; i < 16 ; i++ )
     {
-      digitalWrite(LEDARRAY_G, HIGH);   //Stop showing when updating data. When the data is updated, avoid overlaping
+      digitalWrite(LEDARRAY_G, HIGH);   //When updating the data,please close the display. After updating the data, open the 138 display line. Avoiding ghosting.
     
       Display_Buffer[0] = dat[0][i];    
       Display_Buffer[1] = dat[0][i+16];
@@ -308,8 +308,8 @@ void Random_Dot()
           }
       }
     }
-    while(!flag3);
-                               //When flag3 == 1, it means that the random dot is picked
+    while(!flag3);				//When flag3 == 1, it means that the random dot is picked
+                               
     table[count]=u;         //Put the random dot into table[count]
 }
 
@@ -424,7 +424,7 @@ void Display()
 
     for( j = 0 ; j <= count ; j++ )
     {
-      digitalWrite(LEDARRAY_G, HIGH);     //Stop showing when updating data. When the data is updated, avoid overlaping
+      digitalWrite(LEDARRAY_G, HIGH);     //When updating the data,please close the display. After updating the data, open the 138 display line. Avoiding ghosting.
 
       y=table[j]/16;        //The higher 4 digits is the column number       0 = on, 1 = off
       x=table[j]%16;        //The lower 4 digits is the row number         1 = on, 0 = off
