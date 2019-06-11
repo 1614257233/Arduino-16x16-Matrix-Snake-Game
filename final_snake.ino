@@ -100,7 +100,7 @@ void loop()
 
 
 //**********************************************************
-//Time interrupt routine, to shift the snake
+//Time interrupt routine, to shift the snake                              
 //**********************************************************
 ISR(TIMER1_COMPA_vect) //Interrupt timer 1 and make the snake available to shift
 {
@@ -176,7 +176,7 @@ void Calc_Shift()
 }
 
 //************************************************************
-//num is the number of words,  dat[][32]is the buffer
+//num is the number of words,  dat[][32]is the buffer               A modification of some code from the Internet
 //*************************************************************
 void Display_Word(unsigned char dat[][32])         
 {
@@ -313,7 +313,7 @@ void Random_Dot()
     table[count]=u;         //Put the random dot into table[count]
 }
 
-void Init_time()
+void Init_time()                                           //  This function is copied from the Internet
 {
     cli();          // disable global interrupts
     TCCR1A = 0;     // set entire TCCR1A register to 0
@@ -414,7 +414,7 @@ void Scan_Key()
 
 
 //************************************************************
-//Displaying the snake game
+//Displaying the snake game                                        A modification of code from the Internet
 //*************************************************************
 void Display()          
 {
@@ -458,7 +458,7 @@ void Display()
 }
 
 //****************************************************
-//Scanning lines
+//Scanning lines                                                Copied from the Internet
 //****************************************************
 void Scan_Line( unsigned char m)
 { 
@@ -517,7 +517,7 @@ void Scan_Line( unsigned char m)
 }
 
 //****************************************************
-//Sending Data
+//Sending Data                                                   Copied from the Internet
 //****************************************************
 void Send( unsigned char dat)
 {
